@@ -1,4 +1,3 @@
-import rest_framework_jwt.authentication
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import update_last_login
 from rest_framework import serializers
@@ -31,7 +30,6 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         if profile_data:
             UserProfile.objects.create(user=user, name=profile_data["name"])
         return user
-
 
 class UserLoginSerializer(serializers.Serializer):
 

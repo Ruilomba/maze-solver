@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "a5812b5b-7c36-46f2-b021-a3421fd713f8",
+		"name": "maze-solver",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer c829c3c1490e0dc5f2a8b16591a342b8e103aebc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"rui@test.com\",\n    \"password\": \"test123\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"rui@test.com\",\n    \"password\": \"test123\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/mazes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYTQ4MDY4YzAtYjNjNC00M2U2LTljOWItMTAwZjY3YjBhMDY1IiwidXNlcm5hbWUiOiJydWlAdGVzdC5jb20iLCJleHAiOjE2NjMzNTE3OTAsImVtYWlsIjoicnVpQHRlc3QuY29tIiwib3JpZ19pYXQiOjE2NjA3NTk3OTB9.hcZ8nmfJCYDatNmSyY5aRJmB1eaa4inMCF8sttcu3JA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/mazes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"mazes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/mazes/",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYTQ4MDY4YzAtYjNjNC00M2U2LTljOWItMTAwZjY3YjBhMDY1IiwidXNlcm5hbWUiOiJydWlAdGVzdC5jb20iLCJleHAiOjE2NjMzNTE3OTAsImVtYWlsIjoicnVpQHRlc3QuY29tIiwib3JpZ19pYXQiOjE2NjA3NTk3OTB9.hcZ8nmfJCYDatNmSyY5aRJmB1eaa4inMCF8sttcu3JA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"entrance\": \"A1\",\n            \"gridSize\": \"8x8\",\n            \"walls\": [\"G1\", \"H1\", \"A2\", \"C2\", \"E2\", \"H2\", \"G2\", \"C3\",\n                      \"E3\", \"H3\", \"B4\", \"C4\", \"E4\", \"F4\", \"B5\", \"E5\", \"H5\", \"B6\", \"D6\",\n                      \"E6\", \"G6\", \"H6\", \"B7\", \"D7\", \"G7\", \"H7\", \"B8\", \"H8\"]\n        }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/mazes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"mazes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/mazes/3/solution",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYTQ4MDY4YzAtYjNjNC00M2U2LTljOWItMTAwZjY3YjBhMDY1IiwidXNlcm5hbWUiOiJydWlAdGVzdC5jb20iLCJleHAiOjE2NjMzNTE3OTAsImVtYWlsIjoicnVpQHRlc3QuY29tIiwib3JpZ19pYXQiOjE2NjA3NTk3OTB9.hcZ8nmfJCYDatNmSyY5aRJmB1eaa4inMCF8sttcu3JA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/mazes/3/solution?steps=max",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"mazes",
+						"3",
+						"solution"
+					],
+					"query": [
+						{
+							"key": "steps",
+							"value": "max"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
